@@ -26,3 +26,14 @@ class MyModel(Base):
         self.name = name
         self.value = value
 
+class AccountForm(Base):
+    __tablename__ = 'accountform'
+    id = Column(Integer, primary_key=True)
+    firstname = Column(Text)
+    lastname = Column(Text)
+
+    def __init__(self, first, last):
+        self.firstname = first
+        self.lastname = last
+
+
