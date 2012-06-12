@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+<style>
+body {
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+	background: #666666;
+	margin: 0; /* it's good practice to zero the margin and padding of the body element to account for differing browser defaults */
+	padding: 0;
+	text-align: center; /* this centers the container in IE 5* browsers. The text is then set to the left aligned default in the #container selector */
+	color: #000000;
+}
+.oneColLiqCtrHdr #container {
+	width: 80%;  /* this will create a container 80% of the browser width */
+	background: #FFFFFF;
+	margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
+	border: 1px solid #000000;
+	text-align: left; /* this overrides the text-align: center on the body element. */
+}
+.oneColLiqCtrHdr #header {
+	background: #DDDDDD; 
+	padding: 0 10px 0 20px;  /* this padding matches the left alignment of the elements in the divs that appear beneath it. If an image is used in the #header instead of text, you may want to remove the padding. */
+}
+.oneColLiqCtrHdr #header h1 {
+	margin: 0; /* zeroing the margin of the last element in the #header div will avoid margin collapse - an unexplainable space between divs. If the div has a border around it, this is not necessary as that also avoids the margin collapse */
+	padding: 10px 0; /* using padding instead of margin will allow you to keep the element away from the edges of the div */
+}
+.oneColLiqCtrHdr #mainContent {
+	padding: 0 20px; /* remember that padding is the space inside the div box and margin is the space outside the div box */
+	background: #FFFFFF;
+}
+.oneColLiqCtrHdr #footer { 
+	padding: 0 10px; /* this padding matches the left alignment of the elements in the divs that appear above it. */
+	background:#DDDDDD;
+} 
+.oneColLiqCtrHdr #footer p {
+	margin: 0; /* zeroing the margins of the first element in the footer will avoid the possibility of margin collapse - a space between divs */
+	padding: 10px 0; /* padding on this element will create space, just as the the margin would have, without the margin collapse issue */
+}
+</style>
+</head>
+
+<body class="oneColLiqCtrHdr">
+
+<div id="container">
+  <div id="header">
+    <h1>Create a New User Account</h1>
+  <!-- end #header --></div>
+  <div id="info">
+  	<h3>
+    Before filling out this application, please read the UC Berkeley Computer Use Policy and the UC Electronic Communications Policy, as well as the EECS Computer Account Policy and EECS Compute2Account Password Policy. By choosing to submit this application electronically, it is implied that the owner of the account has read the UC Berkeley Computer Use Policy, the UC Electronic Communications Policy, and the EECS Computer Account Policy, and has agreed to abide by the terms and conditions of these policies.
+
+Please note: Requests submitted prior to 2 pm will be processed by the next working day. Requests submitted after 2 pm will be processed within 2 working days.
+
+Use the Next button to proceed through each step. To return to a previous step, click on the cooresponding number at the bottom of the form, do not use your browser's Back button. Fields in red are required.
+    </h3>
+  </div>
+  <div id="mainContent">
+    <form action="${url}" method="POST">
+       <h2> Requester Information </h2>
+       <span> Requester Name: ${name} </span><br>
+       <span> Requester Email: ${email} </span><br>
+       <span> Reply-to Email: </span><input type="text" name="reply-to">
+    
+       <h2> New User Information </h2>
+       <span>User Type: </span>
+       <SELECT NAME="usertype" SIZE="1" >
+		<OPTION VALUE="">(blank)</OPTION>
+		<OPTION VALUE="j1">Adjunct Professor</OPTION>
+		<OPTION VALUE="a1">Alumni</OPTION>
+		<OPTION VALUE="c2">Associate Chairman</OPTION>
+		<OPTION VALUE="d2">Asst. Dean of ERSO</OPTION>
+		<OPTION VALUE="c1">Chairman</OPTION>
+		<OPTION VALUE="b1">Collaborator</OPTION>
+		<OPTION VALUE="z3">Contractor</OPTION>
+		<OPTION VALUE="d1">Dean</OPTION>
+		<OPTION VALUE="r2">Deputy Director of ERSO</OPTION>
+		<OPTION VALUE="r1">Director</OPTION>
+		<OPTION VALUE="x1">EVC&amp;P</OPTION>
+		<OPTION VALUE="e1">Emeritus</OPTION>
+		<OPTION VALUE="p1">Faculty</OPTION>
+		<OPTION VALUE="g1">Graduate Student</OPTION>
+		<OPTION VALUE="g2">Graduate Student - NR</OPTION>
+		<OPTION VALUE="g3">Guest</OPTION>
+		<OPTION VALUE="l1">Lecturer</OPTION>
+		<OPTION VALUE="g4">Postdoctorate</OPTION>
+		<OPTION VALUE="p2">Professor in Residence</OPTION>
+		<OPTION VALUE="u2">Re-entry Student</OPTION>
+		<OPTION VALUE="s2">Research Administrator/Team Lead</OPTION>
+		<OPTION VALUE="s4">Research Support Assistant</OPTION>
+		<OPTION VALUE="s3">Research Support Officer</OPTION>
+		<OPTION VALUE="s1">Staff</OPTION>
+		<OPTION VALUE="z2">System Account</OPTION>
+		<OPTION VALUE="u1">Undergraduate Student</OPTION>
+		<OPTION VALUE="z4">Unix Account Only</OPTION>
+		<OPTION VALUE="z1">Unknown</OPTION>
+		<OPTION VALUE="v1">Visiting Faculty</OPTION>
+		<OPTION VALUE="v4">Visiting Graduate Student</OPTION>
+		<OPTION VALUE="v2">Visiting Industrial Fellow</OPTION>
+		<OPTION VALUE="v6">Visiting Instructor</OPTION>
+		<OPTION VALUE="v5">Visiting Postdoc</OPTION>
+		<OPTION VALUE="v7">Visiting Researcher</OPTION>
+		<OPTION VALUE="v3">Visiting Scholar</OPTION>
+		</SELECT>
+		<br>
+       <span> Last Name: </span><input type="text" name="lastname"><br>
+       <span> First Name: </span><input type="text" name="firstname"><br>
+       <span> Nickname: </span><input type="text" name="nickname">
+
+    
+       <h2> Department and Location </h2>
+       <span>Department: </span> <SELECT NAME="dept" SIZE="1" >
+		<OPTION VALUE="">(blank)</OPTION>
+		<OPTION VALUE="AS&amp;T">Applied Science and Technology</OPTION>
+		<OPTION VALUE="ASTROBIO">AstroBiology</OPTION>
+		<OPTION VALUE="ASTRON">Astronomy</OPTION>
+		<OPTION VALUE="BCNM">Berkeley Center for New Media</OPTION>
+		<OPTION VALUE="BMRC">Berkeley Multimedia Research Center</OPTION>
+		<OPTION VALUE="BNNI">Berkeley Nanosciences &amp; NanoEngineering Institute</OPTION>
+		<OPTION VALUE="BNHM">Berkeley Natural History Museum</OPTION>
+		<OPTION VALUE="BSAC">Berkeley Sensor and Actuator Center</OPTION>
+		<OPTION VALUE="BWRC">Berkeley Wireless Research Center</OPTION>
+		<OPTION VALUE="BIOENG">Bioengineering</OPTION>
+		<OPTION VALUE="CP">Capital Projects</OPTION>
+		<OPTION VALUE="CEDR">Center for Environmental Design Research</OPTION>
+		<OPTION VALUE="CITRIS">Center for Info. Tech. Research in the Community</OPTION>
+		<OPTION VALUE="CNMAT">Center for New Music and Technologies</OPTION>
+		<OPTION VALUE="CHEME">Chemical Engineering</OPTION>
+		<OPTION VALUE="CHEM">Chemistry</OPTION>
+		<OPTION VALUE="CE">Civil Engineering</OPTION>
+		<OPTION VALUE="CEE">Civil and Environmental Engineering</OPTION>
+		<OPTION VALUE="COE">College of Engineering</OPTION>
+		<OPTION VALUE="CS">Computer Science</OPTION>
+		<OPTION VALUE="ART">Department of Art Practices</OPTION>
+		<OPTION VALUE="EPS">Earth and Planetary Sciences</OPTION>
+		<OPTION VALUE="EDU">Education Department</OPTION>
+		<OPTION VALUE="EE">Electrical Engineering</OPTION>
+		<OPTION selected VALUE="EECS">Electrical Engineering and Computer Sciences</OPTION>
+		<OPTION VALUE="EE/Math">Electrical Engineering and Mathematics</OPTION>
+		<OPTION VALUE="ERL">Electronics Research Lab (retired - do not use)</OPTION>
+		<OPTION VALUE="ERG">Energy &amp; Resources Group</OPTION>
+		<OPTION VALUE="ERSO">Engineering Research Support Organization</OPTION>
+		<OPTION VALUE="IEOR">Industrial Engineering and Operations Research</OPTION>
+		<OPTION VALUE="ITS">Institute of Transportation Studies (PATH)</OPTION>
+		<OPTION VALUE="ICSI">International Computer Science Institute</OPTION>
+		<OPTION VALUE="LBNL">Lawrence Berkeley National Lab</OPTION>
+		<OPTION VALUE="MSME">Materials Science and Engineering</OPTION>
+		<OPTION VALUE="MATH">Mathematics</OPTION>
+		<OPTION VALUE="MECH">Mechanical Engineering</OPTION>
+		<OPTION VALUE="MCB">Molecular &amp; Cell Biology</OPTION>
+		<OPTION VALUE="MUSIC">Music Department</OPTION>
+		<OPTION VALUE="NEUROSCI">Neuroscience</OPTION>
+		<OPTION VALUE="NE">Nuclear Engineering</OPTION>
+		<OPTION VALUE="UCBSO">Optometry</OPTION>
+		<OPTION VALUE="Other">Other - Please specify in comments</OPTION>
+		<OPTION VALUE="PHYS">Physics</OPTION>
+		<OPTION VALUE="QB3">Quantitative BioSciences</OPTION>
+		<OPTION VALUE="RAL">Radio Astronomy Lab</OPTION>
+		<OPTION VALUE="RAEL">Renewable and Appropriate Energy Laboratory</OPTION>
+		<OPTION VALUE="RSSP">Residential &amp; Student Service Programs</OPTION>
+		<OPTION VALUE="SIMS">School of Information Management and Systems</OPTION>
+		<OPTION VALUE="SPH">School of Public Health</OPTION>
+		<OPTION VALUE="SSL">Space Sciences Laboratory</OPTION>
+		<OPTION VALUE="STATS">Statistics</OPTION>
+		<OPTION VALUE="UCEI">UC Energy Institute</OPTION>
+		<OPTION VALUE="VISSCI">Visual Science</OPTION>
+		</SELECT>
+		<br>
+		<br>
+		<input type="submit" name="form.submitted" value="Next >>">
+		<br>
+
+    </form>
+    <!-- end #mainContent --></div>
+  <div id="footer">
+    <p>EECS Information Management Group</p>
+<p>img@eecs.berkeley.edu</p>
+<p>last modified 20 January 2006</p>
+  <!-- end #footer --></div>
+<!-- end #container --></div>
+</body>
+</html>
